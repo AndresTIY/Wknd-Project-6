@@ -1,0 +1,43 @@
+.signup-card {
+
+    width: 60%;
+    margin: 5rem auto;
+    padding: 2rem;
+    background: $color-card-bg;
+    border-radius: .5rem;
+    * {
+      margin: 1rem;
+    }
+
+
+    h2 {
+      font-weight: 300;
+      font-size: 1.5rem;
+    }
+    button {
+      width: 90%;
+      background: $color-blue;
+      color: $color-card-bg;
+      font-size: 1.5rem;
+      border-style: none;
+      border-radius: .5rem;
+      padding: 1rem 0;
+    }
+    button:hover {
+        transition: .5s;
+        background: $color-dark-blue;
+      }
+
+    input {
+      width: 90%;
+      font-size: 1.25rem;
+      font-weight: 300;
+
+
+    }
+    input:focus {
+
+      outline-color: $color-blue;
+      outline-width: medium;
+    }
+}

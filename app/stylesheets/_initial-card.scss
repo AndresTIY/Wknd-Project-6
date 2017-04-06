@@ -8,6 +8,7 @@
   h1 {
     color: $color-blue;
     text-align: center;
+    font-weight: 300;
   }
 
   button{
@@ -25,6 +26,6 @@
       transition: .5s;
       background: $color-dark-blue;
     }
-  
+
 
 }
