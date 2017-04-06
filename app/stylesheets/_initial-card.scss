@@ -1,0 +1,30 @@
+.initial-card {
+  width: 60%;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: $color-card-bg;
+  border-radius: .5rem;
+
+  h1 {
+    color: $color-blue;
+    text-align: center;
+  }
+
+  button{
+    font-size: 1.5rem;
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: $color-blue;
+    color: white;
+    border-style: none;
+  }
+
+  button:hover {
+      transition: .5s;
+      background: $color-dark-blue;
+    }
+  
+
+}
