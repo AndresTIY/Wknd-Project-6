@@ -40,26 +40,49 @@ Tweet Posted and Feed: Method => GET
   date: value,
   message: string
 }
-
-
-
+Logout
 
 VIEW: 4 pages, Sign up, Login, Feed, Create Tweet
 - Make it responsive, start mobile first
 
+- Initial View, has two buttons for
+  - Sign Up or Login
+
 - Sign Up View
 data seen: [full name, username, email, password]
+buttons/inputs seen: [sign up btn, data as inputs]
+
 - Login View
 data seen: [email, password]
+buttons/inputs seen: [sign in btn]
+
 - Feed View
 data seen: [full name, username, messages, time of post]
-- User Feed View
+buttons/inputs seen: [create tweet, log out, feed tweets, delete, user profile]
+
+- User Feed View/Profile Page
 data seen: [full name, username, messages, time of post]
+buttons/inputs seen: [create tweet, log out, user feed tweets, delete, main feed btn]
+  - feed by user only
+  - Info about user
 
 - Create Tweet View
 data seen: [message, post button]
+buttons/inputs seen:[]
+- Tweet Zoomed In View when tweet area clicked on
 
 
 CONTROLLER: what whens actions
+Initial View -> two buttons -> Sign up OR Log In
 Sign Up
-- 
+- Sign Up Button, takes user to feed view
+- Dispatch Type: Load Data
+- Possible Actions: Load Data, change to main feed
+Log In
+- Log In Button, takes user to feed view
+- Dispatch Type: Load Data
+- Possible Actions: Load Data, change to main feed
+Main Feed
+- Clicking Feed Item pops up box
+- User should be able to see a "DELETE" option
+- Possible Actions: Create, Delete, Log Out, User Feed
