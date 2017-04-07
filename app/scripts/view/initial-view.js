@@ -13,7 +13,6 @@ export default function initialView (store){
     })
     $html.find('.login').on('click', (e)=>{
       store.dispatch({type:"LOGIN"})
-      // store.dispatch({type:"LOGIN"})
     })
   return $html
 }
