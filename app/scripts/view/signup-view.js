@@ -10,5 +10,21 @@ export default function signupView (store){
     </div>
     `)
 
+    $html.find('button').on('click',(e)=>{
+      console.log('sign up button works');
+      let name = $html.find('.fullname').val()
+      let username = $html.find('.username').val()
+      let email = $html.find('.email').val()
+      let pw = $html.find('.pw').val()
+      store.dispatch({
+        type:"TEST_VIEW",
+        // type:"CREATE_USER",
+        name: name,
+        username: username,
+        email: email,
+        password: pw
+      })
+    })
+
     return $html
 }

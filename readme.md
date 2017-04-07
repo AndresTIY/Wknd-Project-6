@@ -3,7 +3,7 @@
 - Use full user authentication including:
   - [signup, login, logout]
 - Full CRUD functionality for tweets
-  - [Create, Retrieve/Read, Update, Delete]
+  - [Create, Read, Update, Delete]
   - User should be able to CRUD their own tweets
 - A feed page that allows users to view all tweets posted by all users
 - Make site responsive
@@ -28,7 +28,8 @@ Login: Method => POST
 {
   email: string,
   password: string
-}
+}//grab data
+
 Create Tweet: Method => POST
 {
   message: string, (less than 140 characters)
@@ -86,3 +87,7 @@ Main Feed
 - Clicking Feed Item pops up box
 - User should be able to see a "DELETE" option
 - Possible Actions: Create, Delete, Log Out, User Feed
+
+
+- What to work on next?
+  - the feed view

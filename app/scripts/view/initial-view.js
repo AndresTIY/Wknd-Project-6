@@ -9,19 +9,11 @@ export default function initialView (store){
 
 
     $html.find('.signup').on('click', (e)=>{
-      console.log('sign up button works');
-      //action that takes user to login page
       store.dispatch({type:"SIGN_UP"})
-
     })
     $html.find('.login').on('click', (e)=>{
-      console.log('log in button works');
-      //action that takes user to login page
-      // store.dispatch({type:"LOAD_DATA"})
+      store.dispatch({type:"TEST_VIEW"})
+      // store.dispatch({type:"LOGIN"})
     })
-
-
-
-
   return $html
-}//end of export
+}
