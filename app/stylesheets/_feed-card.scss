@@ -17,3 +17,16 @@
     }
 
   }
+.name {
+  font-weight: bold;
+}
+.user, .date {
+  // grey smaller
+  color: $color-grey;
+  font-size: .9rem;
+
+}
+
+.msg {
+  //
+}

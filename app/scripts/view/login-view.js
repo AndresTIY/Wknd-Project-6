@@ -2,8 +2,8 @@ export default function loginView (store){
   let $html = $(`
     <div class="login-card">
       <h2>Log in to Twitter Clone.</h2>
-      <input class="email" type="email" placeholder="Email" name="" value="">
-      <input class="pw" type="password" placeholder="Password" name="" value="">
+      <input class="email" type="email" placeholder="Email" name="" value="user@example.com">
+      <input class="pw" type="password" placeholder="Password" name="" value="password">
       <button>Log in</button>
     </div>
     `)
@@ -13,8 +13,8 @@ export default function loginView (store){
       let email = $html.find('.email').val()
       let pw = $html.find('.pw').val()
       store.dispatch({
-        // type: "VALIDATE_USER"
-        type:"TEST_VIEW",
+        type: "VALIDATE_USER",
+        // type:"TEST_VIEW",
         email: email,
         password: pw
       })

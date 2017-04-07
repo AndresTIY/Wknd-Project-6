@@ -14,7 +14,8 @@
 - Focus on Tweets and users
 
 ### Planning
-
+- Tweet table[message, name, username, time, ]
+- User table
 MODEL: CRUD
 Sign Up: Method => POST
  {
@@ -90,4 +91,5 @@ Main Feed
 
 
 - What to work on next?
-  - the feed view
+ - user log in with preexisting data
+ - user sign up action

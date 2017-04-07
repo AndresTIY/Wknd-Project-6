@@ -5,13 +5,15 @@ import feedView from './view/feed-view.js'
 import loginView from './view/login-view.js'
 import logger from './logger_middleware.js'
 export default function app() {
-  const url = 'https://api.backendless.com/v1/data/tw_clone;'
+  const url = 'https://api.backendless.com/v1'
+  const appId = "892747C4-CCC9-E96F-FF91-006B50E61400";
+  const restKey = "30D82F23-700A-52A1-FF7B-1BC275C5F700";
 
   const initialState = {
     user: null,
     data: null,
     view: initialView
-    // view: signupView
+
   }
 
   const reducer = function(currentState, action){
@@ -35,22 +37,73 @@ export default function app() {
         //unnecessary for now
       return Object.assign({}, currentState, newState)
 
-      case "VALIDATE_USER":
+      case "LOGIN":
         var newState = {
           view: loginView
+        };
+      return Object.assign({}, currentState, newState)
+
+
+      case "VALIDATE_USER":
+      $.ajax({
+          url: url + "/users/login",
+          method: 'POST',
+          headers: {
+            "application-id": appId,
+            "secret-key": restKey,
+            "Content-Type": "application/json",
+            "application-type": "REST"
+          },
+          data: JSON.stringify({
+            login: action.email,
+            password: action.password
+          })
+        }).then(function(data,success,xhr){
+        store.dispatch({
+          type:"LOAD_DATA",
+          user: data.email,
+          token: data["user-token"]
+        })
+      })
+        return currentState
+
+
+
+      // case "LOG_OUT":
+      case "LOAD_DATA":
+      $.ajax({
+        url: url + "/data/tw_clone",
+        type: "GET",
+        dataType: 'JSON',
+        headers: {
+          "application-id": appId,
+          "secret-key": restKey
+        }
+      }).then((data)=>{
+        console.log(data);
+        store.dispatch({
+          type: "DATA_LOADED",
+          data: data
+        })
+      })
+      return currentState;
+
+
+      case "DATA_LOADED":
+        var newState = {
+          data: action.data,
+          currentUser: action.user,
+          view: feedView
         }
       return Object.assign({}, currentState, newState)
 
 
-      // case "LOG_IN":
-      // case "LOG_OUT":
-      case "LOAD_DATA":
-        // grab data.then
-        // store.dispatch({type:"DATA_LOADED"})
-      return currentState;
+
+
       case "TEST_VIEW":
         var newState = {
-          view: feedView
+          view: feedView,
+          data: action.data
         }
       return Object.assign({}, currentState, newState)
 

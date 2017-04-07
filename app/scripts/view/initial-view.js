@@ -12,7 +12,7 @@ export default function initialView (store){
       store.dispatch({type:"SIGN_UP"})
     })
     $html.find('.login').on('click', (e)=>{
-      store.dispatch({type:"TEST_VIEW"})
+      store.dispatch({type:"LOGIN"})
       // store.dispatch({type:"LOGIN"})
     })
   return $html
