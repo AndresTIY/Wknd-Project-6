@@ -44,7 +44,7 @@ export default function app() {
                 password: action.password
               })
             }).then(function(data,success,xhr){
-            store.dispatch({stype:"LOAD_DATA"})
+            store.dispatch({type:"LOAD_DATA", user: data.email})
           })
       return currentState;
 
@@ -94,7 +94,8 @@ export default function app() {
         console.log(data);
         store.dispatch({
           type: "DATA_LOADED",
-          data: data
+          data: data,
+          user: action.user
         })
       })
       return currentState;
@@ -120,12 +121,8 @@ export default function app() {
 
 
 
-      // case "DATA_LOADED":
-        // var newState = {
-        //   view: feedView
-        // }
-      // case "DATA_LOADED":
-      // case "CREATE_TWEET":
+
+      case "CREATE_TWEET":
       // case "DEL_TWEET":
       case "NOOP":
         return currentState;

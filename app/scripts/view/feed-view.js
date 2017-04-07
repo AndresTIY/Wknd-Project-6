@@ -8,9 +8,15 @@ export default function feedView (store){
 
 
   let $html = $(`
-    <div class="feed-card">
-
-
+    <div>
+      <header>
+        <h2>Share Your Thoughts</h2>
+        <button type="button" name="button">
+          <i class="fa fa-comment-o" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="feed-card">
+      </div>
     </div>
     `)
 
@@ -18,7 +24,7 @@ export default function feedView (store){
     return feedItemView(store, item)
   })
 
-  $($html).html(tweets)
+  $($html).find('.feed-card').append(tweets)
 
 
 

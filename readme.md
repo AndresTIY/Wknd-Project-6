@@ -91,5 +91,7 @@ Main Feed
 
 
 - What to work on next?
- - user log in with preexisting data
- - user sign up action
+ - create a tweet
+ - delete tweet
+ - user profile/user tweets only
+ 

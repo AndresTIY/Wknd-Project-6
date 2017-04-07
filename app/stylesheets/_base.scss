@@ -2,4 +2,35 @@ body{
   background: $color-background;
 
   font-family: Helvetica Neue, sans-serif;
+
+  header{
+      width: 100%;
+      background: $color-card-bg;
+      position: fixed;
+      top: 0;
+      left: 0;
+      text-align: center;
+      * {
+        display: inline-block;
+        margin: .5rem 1rem;
+      }
+      button {
+        font-size: 2rem;
+        background: white;
+        padding: 0 1rem;
+        border: 1px solid $color-blue;
+        border-radius: 1rem;
+        color: $color-blue;
+      }
+      button:hover {
+        background: $color-blue;
+        color: white;
+        border: 1px solid white;
+      }
+      h2 {
+        font-weight: 300;
+      }
+
+
+  }
 }
