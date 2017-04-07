@@ -17,8 +17,7 @@ export default function signupView (store){
       let email = $html.find('.email').val()
       let pw = $html.find('.pw').val()
       store.dispatch({
-        type:"TEST_VIEW",
-        // type:"CREATE_USER",
+        type:"CREATE_USER",
         name: name,
         username: username,
         email: email,

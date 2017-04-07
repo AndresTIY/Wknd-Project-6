@@ -28,14 +28,25 @@ export default function app() {
         return Object.assign({}, currentState, newState)
 
       case "CREATE_USER":
-        var newState = {
-          name: action.name,
-          username: (`@${action.username}`),
-          email: action.email,
-          password: action.pw
-        }
-        //unnecessary for now
-      return Object.assign({}, currentState, newState)
+          $.ajax({
+              url: url + "/data/Users",
+              method: 'POST',
+              headers: {
+                "application-id": appId,
+                "secret-key": restKey,
+                "Content-Type": "application/json",
+                "application-type": "REST"
+              },
+              data: JSON.stringify({
+                fullName: action.name ,
+                username: "@" + action.username,
+                email: action.email,
+                password: action.password
+              })
+            }).then(function(data,success,xhr){
+            store.dispatch({stype:"LOAD_DATA"})
+          })
+      return currentState;
 
       case "LOGIN":
         var newState = {
