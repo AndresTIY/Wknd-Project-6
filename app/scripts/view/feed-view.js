@@ -17,6 +17,8 @@ export default function feedView (store){
       </header>
       <div class="feed-card">
       </div>
+      <input type="text" name="date" id="date">
+
       <button id="opener">open the dialog</button>
       <div id="dialog" title="Dialog Title">I'm a dialog</div>
 
@@ -33,12 +35,17 @@ export default function feedView (store){
     //pop up create message form with a send msg button
 
   })
+  let date = $($html).find('#date');
+  
 
-    $($html).find("#dialog").dialog({ autoOpen: false });
-    $($html).find( "#opener" ).click(function() {
-    $($html).find( "#dialog" ).dialog( "open" );
-  });
-
+  //
+  //   $($html).find("#dialog").dialog({
+  //     autoOpen: false
+  //   });
+  //   $($html).find( "#opener" ).click(function() {
+  //   $($html).find( "#dialog" ).dialog( "open" );
+  // });
+  //
 
 
 

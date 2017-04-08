@@ -56,6 +56,7 @@ var config = {
   plugins: [
     new ExtractTextPlugin("styles.css"),
     new ExtractTextPlugin("jquery-ui.structure.min.css"),
+    new ExtractTextPlugin("jquery-ui.min.js"),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'

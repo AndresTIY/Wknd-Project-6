@@ -3,14 +3,27 @@
   margin: 5rem auto 0 auto;
   background: $color-background;
   padding: 1rem;
-  width: 50%;
+  width: 60%;
   border: 2px solid black;
+  text-align: right;
   textarea {
-    display: block;
+    // display: block;
     margin: 0 auto;
     font-size: 1rem;
   }
   button {
-    
+    margin-top: .5rem;
+    margin-right: 4rem;
+    font-size: 1rem;
+    background: white;
+    padding: .5rem 1rem;
+    border: 1px solid $color-blue;
+    border-radius: 1rem;
+    color: $color-blue;
+  }
+  button:hover {
+    background: $color-blue;
+    color: white;
+    border: 1px solid white;
   }
 }

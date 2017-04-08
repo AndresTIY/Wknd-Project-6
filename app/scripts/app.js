@@ -15,6 +15,7 @@ export default function app() {
     view: initialView
 
   }
+  $('#date').datepicker();
 
   const reducer = function(currentState, action){
     if (currentState === undefined){
