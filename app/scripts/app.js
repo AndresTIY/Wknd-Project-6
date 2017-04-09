@@ -3,6 +3,7 @@ import initialView from './view/initial-view.js'
 import signupView from './view/signup-view.js'
 import feedView from './view/feed-view.js'
 import loginView from './view/login-view.js'
+import dataLoad from './data-load.js'
 import logger from './logger_middleware.js'
 export default function app() {
   const url = 'https://api.backendless.com/v1'
@@ -45,7 +46,7 @@ export default function app() {
                 password: action.password
               })
             }).then(function(data,success,xhr){
-            store.dispatch({type:"LOAD_DATA", user: data.email})
+            store.dispatch({type:"LOGIN", data: data})
           })
       return currentState;
 
@@ -72,12 +73,34 @@ export default function app() {
           })
         }).then(function(data,success,xhr){
         store.dispatch({
-          type:"LOAD_DATA",
-          user: data.email,
+          type:"LOAD_USER",
+          ownerId: data.ownerId,
+          username: data.username,
+          name: data.fullName,
           token: data["user-token"]
         })
       })
         return currentState
+
+      case "LOAD_USER":
+      $.ajax({
+          url: (`${url}/data/users/${action.ownerId}`),
+          method: 'GET',
+          headers: {
+            "application-id": appId,
+            "secret-key": restKey
+          },
+        }).then(function(data,success,xhr){
+        store.dispatch({
+          type:"LOAD_DATA",
+          ownerId: data.ownerId,
+          username: data.username,
+          name: data.fullName
+        })
+      })
+        return currentState
+
+
 
 
 
@@ -96,7 +119,9 @@ export default function app() {
         store.dispatch({
           type: "DATA_LOADED",
           data: data,
-          user: action.user
+          username: action.username,
+          name: action.name,
+          ownerId: action.ownerId
         })
       })
       return currentState;
@@ -105,10 +130,21 @@ export default function app() {
       case "DATA_LOADED":
         var newState = {
           data: action.data,
-          currentUser: action.user,
-          view: feedView
+          currentUser: {
+            username: action.username,
+            name: action.name,
+            ownerId: action.ownerId
+          },
+          view: dataLoad
         }
       return Object.assign({}, currentState, newState)
+
+      case "LOAD_PAGE":
+        var newState = {
+          view: feedView
+        };
+      return Object.assign({}, currentState, newState)
+
 
 
 
@@ -124,7 +160,30 @@ export default function app() {
 
 
       case "CREATE_TWEET":
-      // case "DEL_TWEET":
+        $.ajax({
+            url: 'https://api.backendless.com/v1/data/tw_clone',
+            method: 'POST',
+            headers: {
+              "application-id": appId,
+              "secret-key": restKey,
+              "Content-Type": "application/json",
+              "application-type": "REST"
+            },
+            data: JSON.stringify({
+              message: action.tweet,
+              username: action.username,
+              fullName: action.fullName
+            })
+          }).then(function(data,success,xhr){
+          store.dispatch({
+            type:"LOAD_DATA"
+            // user: data.email,
+            // token: data["user-token"]
+          })
+        })
+        return currentState;
+
+
       case "NOOP":
         return currentState;
 

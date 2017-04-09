@@ -2,6 +2,9 @@ import feedItemView from './feed-item-view.js';
 
 export default function feedView (store){
   let state = store.getState();
+  let currentUser = state.currentUser;
+  console.log(state.currentUser);
+
 
 
 
@@ -24,10 +27,24 @@ export default function feedView (store){
     return feedItemView(store, item)
   })
 
+
+
+
+
+
+
   $($html).find('.feed-card').append(tweets)
 
   $html.find('button').on('click',(e)=>{
     //pop up create message form with a send msg button
+    console.log('button still good');
+    let newMsg = $($html).find('textarea').val();
+    store.dispatch({
+      type:"CREATE_TWEET",
+      tweet: newMsg,
+      username: currentUser.username,
+      fullName: currentUser.name
+    })
 
   })
 
