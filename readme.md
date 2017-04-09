@@ -89,9 +89,27 @@ Main Feed
 - User should be able to see a "DELETE" option
 - Possible Actions: Create, Delete, Log Out, User Feed
 
+### Reviewing Requirements
+[ ] full user authentication
+  - [x] sign up
+  - [x] log in
+  - [ ] log out
+[ ] CRUD for tweets
+  - [ ] create
+  - [x] read
+  - [ ] update
+  - [ ] delete
+[x] Main Feed Page/Tweets by All
+[ ] User Feed Page
+[ ] Responsive
 
-- What to work on next?
+###  What to work on next?
+CRUD
  - create a tweet
+ - update?
  - delete tweet
+Authentication
+- Log Out
+User Feed
+Responsive
  - user profile/user tweets only
- 
