@@ -94,23 +94,19 @@ Main Feed
   - [x] sign up
   - [x] log in
   - [ ] log out, not working correctly, guessing it has to do with the header settings?
-[ ] CRUD for tweets
+[X] CRUD for tweets
   - [x] create , need to log in all over again to create new. need to fix this but moving on
   - [x] read
   - [ ] update
   - [x] delete, only user should see this button!
 [x] Main Feed Page/Tweets by All
 [X] User Feed Page// maybe add a 'go back' button
-[ ] Responsive
+[x] Responsive, ish
 
 ###  What to work on next?
-CRUD
 
- - update?
-Authentication
 - Log Out
 User Feed
 Responsive
- - user profile/user tweets only
 Use Friday's Notes and Organize
 Change Time Syntax?

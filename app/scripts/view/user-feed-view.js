@@ -9,11 +9,11 @@ export default function userFeedView (store){
   let $html = $(`
     <div>
       <div class="feed-header">
-        <h4>Share Your Thoughts</h4>
+        <h4>You're Looking At ${state.userFeed}'s page </h4>
 
-        <textarea name="name" rows="4" cols="40"></textarea>
-        <button class="create-btn" name="button">
-          <i class="fa fa-comment-o" aria-hidden="true"></i>
+
+        <button class="back-btn" name="button">
+        Go Back
         </button>
 
         <div class="feed-card"></div>
@@ -30,17 +30,8 @@ export default function userFeedView (store){
 
 
 
-  $html.find('.create-btn').on('click',(e)=>{
-    //pop up create message form with a send msg button
-    console.log('button still good');
-    let newMsg = $($html).find('textarea').val();
-    store.dispatch({
-      type:"CREATE_TWEET",
-      tweet: newMsg,
-      username: currentUser.username,
-      fullName: currentUser.name
-    })
-
+  $html.find('.back-btn').on('click',(e)=>{
+    store.dispatch({type:"LOAD_PAGE"})
   })
 
 
