@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux'
 import initialView from './view/initial-view.js'
 import signupView from './view/signup-view.js'
 import feedView from './view/feed-view.js'
+import feedItemView from './view/feed-item-view.js'
 import loginView from './view/login-view.js'
 import dataLoad from './data-load.js'
 import logger from './logger_middleware.js'
@@ -182,6 +183,23 @@ export default function app() {
           })
         })
         return currentState;
+
+        case "DEL_TWEET":
+          var item = action.item;
+          console.log(item);
+          // $.ajax({
+          //   url: `${url}/data/task_table/${item.objectId}`,
+          //   method: "DELETE",
+          //   headers: {
+          //     "application-id": appId,
+          //     "secret-key": restKey
+          //   }
+          // }).then(function(data){
+          //   store.dispatch({type:"USER_LOGGED_IN"})
+          // })
+
+        return currentState;
+
 
 
       case "NOOP":

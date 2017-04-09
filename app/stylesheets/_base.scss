@@ -15,7 +15,7 @@ body{
         display: block;
         margin: .5rem auto;
       }
-      button {
+      .create-btn {
         font-size: 1rem;
         background: white;
         padding: 0 1rem;
@@ -23,7 +23,7 @@ body{
         border-radius: 1rem;
         color: $color-blue;
       }
-      button:hover {
+      .create-btn:hover {
         background: $color-blue;
         color: white;
         border: 1px solid white;

@@ -95,7 +95,7 @@ Main Feed
   - [x] log in
   - [ ] log out
 [ ] CRUD for tweets
-  - [ ] create
+  - [x] create , need to log in all over again to create new. need to fix this but moving on
   - [x] read
   - [ ] update
   - [ ] delete
@@ -105,9 +105,10 @@ Main Feed
 
 ###  What to work on next?
 CRUD
- - create a tweet
+
  - update?
  - delete tweet
+  - make button
 Authentication
 - Log Out
 User Feed

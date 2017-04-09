@@ -3,11 +3,7 @@ import feedItemView from './feed-item-view.js';
 export default function feedView (store){
   let state = store.getState();
   let currentUser = state.currentUser;
-  console.log(state.currentUser);
-
-
-
-
+  // console.log(currentUser);
 
 
   let $html = $(`
@@ -15,7 +11,7 @@ export default function feedView (store){
       <div class="feed-header">
         <h4>Share Your Thoughts</h4>
         <textarea name="name" rows="4" cols="40"></textarea>
-        <button type="button" name="button">
+        <button class="create-btn" name="button">
           <i class="fa fa-comment-o" aria-hidden="true"></i>
         </button>
         <div class="feed-card"></div>
@@ -29,13 +25,7 @@ export default function feedView (store){
 
 
 
-
-
-
-
-  $($html).find('.feed-card').append(tweets)
-
-  $html.find('button').on('click',(e)=>{
+  $html.find('.create-btn').on('click',(e)=>{
     //pop up create message form with a send msg button
     console.log('button still good');
     let newMsg = $($html).find('textarea').val();
@@ -52,6 +42,29 @@ export default function feedView (store){
 
 
 
+  // $($html).find('.del-btn').on('click', (e)=>{
+  //   console.log(e);
+  //   // let tweetsToDel = state.data.data.map((item)=>{
+  //   //
+  //   //     return item.objectId
+  //   //     // console.log(currentUser.ownerId);
+  //   //
+  //   // })
+  //   // store.dispatch({type:"DEL_TWEET", item: tweetsToDel})
+  //
+  //   console.log('delete button works');
+  //
+  // })
+
+
+
+
+
+
+
+
+
+  $($html).find('.feed-card').append(tweets)
 
   return $html;
 }//end of export

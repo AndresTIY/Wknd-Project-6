@@ -4,7 +4,7 @@ export default function feedItemView(store, item) {
 
 
 
-  let $html = (`
+  let $htmlItem = (`
     <div class="item-card">
       <p>
         <span class="name">${item.fullName} </span>
@@ -16,11 +16,18 @@ export default function feedItemView(store, item) {
       <p>
         <span class="msg">${item.message}</span>
       </p>
+      <button class="del-btn">delete</button>
+
     </div>
     `)
 
+  let $delBtn = $($htmlItem).find('.del-btn');
+
+  $delBtn.on('click', (e)=>{
+    console.log('del button clicksssss');
+  })
 
 
 
-    return $html
+  return $htmlItem
 }//end of export
