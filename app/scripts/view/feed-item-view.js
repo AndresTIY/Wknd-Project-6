@@ -27,6 +27,11 @@ export default function feedItemView(store, item) {
     store.dispatch({type:"DEL_TWEET", item: item});
   })
 
+  let $itemName = $($htmlItem).find('.name');
+  $itemName.on('click', (e)=>{
+    console.log('name clicks');
+  })
+
 
 
   return $htmlItem

@@ -93,12 +93,12 @@ Main Feed
 [ ] full user authentication
   - [x] sign up
   - [x] log in
-  - [ ] log out
+  - [ ] log out, not working correctly, guessing it has to do with the header settings?
 [ ] CRUD for tweets
   - [x] create , need to log in all over again to create new. need to fix this but moving on
   - [x] read
   - [ ] update
-  - [x] delete
+  - [x] delete, only user should see this button!
 [x] Main Feed Page/Tweets by All
 [ ] User Feed Page
 [ ] Responsive

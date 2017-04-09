@@ -95,7 +95,8 @@ export default function app() {
           type:"LOAD_DATA",
           ownerId: data.ownerId,
           username: data.username,
-          name: data.fullName
+          name: data.fullName,
+          token: action.token
         })
       })
         return currentState
@@ -121,7 +122,8 @@ export default function app() {
           data: data,
           username: action.username,
           name: action.name,
-          ownerId: action.ownerId
+          ownerId: action.ownerId,
+          token: action.token
         })
       })
       return currentState;
@@ -133,7 +135,8 @@ export default function app() {
           currentUser: {
             username: action.username,
             name: action.name,
-            ownerId: action.ownerId
+            ownerId: action.ownerId,
+            token: action.token
           },
           view: dataLoad
         }
@@ -144,18 +147,6 @@ export default function app() {
           view: feedView
         };
       return Object.assign({}, currentState, newState)
-
-
-
-
-
-      case "TEST_VIEW":
-        var newState = {
-          view: feedView,
-          data: action.data
-        }
-      return Object.assign({}, currentState, newState)
-
 
 
 
@@ -197,6 +188,27 @@ export default function app() {
           })
 
         return currentState;
+
+        case "LOGOUT":
+        $.ajax({
+          url: url + "/users/logout",
+          type: "GET",
+          dataType: 'JSON',
+          headers: {
+            "application-id": appId,
+            "secret-key": restKey,
+            "user-token": action.token,
+            "application-type": "REST"
+          }
+        }).then((data)=>{
+          store.dispatch({type:"LOGGED_OUT"})
+        })
+        return currentState;
+
+        case "LOGGED_OUT":
+          currentState = undefined;
+        return currentState;
+
 
 
 

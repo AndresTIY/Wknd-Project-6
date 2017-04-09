@@ -45,19 +45,10 @@ export default function feedView (store){
 
 
 
-  // $($html).find('.del-btn').on('click', (e)=>{
-  //   console.log(e);
-  //   // let tweetsToDel = state.data.data.map((item)=>{
-  //   //
-  //   //     return item.objectId
-  //   //     // console.log(currentUser.ownerId);
-  //   //
-  //   // })
-  //   // store.dispatch({type:"DEL_TWEET", item: tweetsToDel})
-  //
-  //   console.log('delete button works');
-  //
-  // })
+$html.find('.logout').on('click', (e)=>{
+  console.log('yay');
+  store.dispatch({type:"LOGOUT", token: currentUser.token})
+})
 
 
 
