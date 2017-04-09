@@ -98,7 +98,7 @@ Main Feed
   - [x] create , need to log in all over again to create new. need to fix this but moving on
   - [x] read
   - [ ] update
-  - [ ] delete
+  - [x] delete
 [x] Main Feed Page/Tweets by All
 [ ] User Feed Page
 [ ] Responsive
@@ -107,8 +107,6 @@ Main Feed
 CRUD
 
  - update?
- - delete tweet
-  - make button
 Authentication
 - Log Out
 User Feed

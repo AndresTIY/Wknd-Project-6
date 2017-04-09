@@ -15,6 +15,22 @@ body{
         display: block;
         margin: .5rem auto;
       }
+      .logout {
+        font-size: .75rem;
+        background: white;
+        padding: .5rem 1rem;
+        border: 1px solid $color-blue;
+        border-radius: 1rem;
+        color: $color-blue;
+        display: inline-block;
+
+
+      }
+      .logout:hover {
+        background: $color-blue;
+        color: white;
+        border: 1px solid white;
+      }
       .create-btn {
         font-size: 1rem;
         background: white;
@@ -22,6 +38,7 @@ body{
         border: 1px solid $color-blue;
         border-radius: 1rem;
         color: $color-blue;
+        display: inline-block;
       }
       .create-btn:hover {
         background: $color-blue;
@@ -30,6 +47,8 @@ body{
       }
       h4 {
         font-weight: 300;
+        display: inline-block;
+        text-align: center;
       }
 
 

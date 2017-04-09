@@ -24,7 +24,7 @@ export default function feedItemView(store, item) {
   let $delBtn = $($htmlItem).find('.del-btn');
 
   $delBtn.on('click', (e)=>{
-    console.log('del button clicksssss');
+    store.dispatch({type:"DEL_TWEET", item: item});
   })
 
 

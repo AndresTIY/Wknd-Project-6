@@ -10,11 +10,14 @@ export default function feedView (store){
     <div>
       <div class="feed-header">
         <h4>Share Your Thoughts</h4>
+
         <textarea name="name" rows="4" cols="40"></textarea>
         <button class="create-btn" name="button">
           <i class="fa fa-comment-o" aria-hidden="true"></i>
         </button>
+
         <div class="feed-card"></div>
+        <button class="logout">log out</button>
       </div>
     </div>
     `)
