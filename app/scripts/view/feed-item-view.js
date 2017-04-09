@@ -28,8 +28,9 @@ export default function feedItemView(store, item) {
   })
 
   let $itemName = $($htmlItem).find('.name');
+
   $itemName.on('click', (e)=>{
-    console.log('name clicks');
+    store.dispatch({type:"USER_FEED", userClicked: item.username})
   })
 
 

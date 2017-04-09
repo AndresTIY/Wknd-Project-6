@@ -3,6 +3,7 @@ import initialView from './view/initial-view.js'
 import signupView from './view/signup-view.js'
 import feedView from './view/feed-view.js'
 import loginView from './view/login-view.js'
+import userFeedView from './view/user-feed-view.js'
 import dataLoad from './data-load.js'
 import logger from './logger_middleware.js'
 export default function app() {
@@ -187,7 +188,14 @@ export default function app() {
             store.dispatch({type:"LOAD_DATA"})
           })
 
-        return currentState;
+        case "USER_FEED":
+          var newState = {
+            view: userFeedView,
+            userFeed: action.userClicked
+          }
+        return Object.assign({}, currentState, newState)
+
+
 
         case "LOGOUT":
         $.ajax({
