@@ -1,13 +1,19 @@
 .feed-card {
 
     width: 60%;
-    margin: 7rem auto;
+    // margin: 7rem auto;
     padding: 2rem;
-    background: $color-card-bg;
-    border-radius: .5rem;
+
+    // border-radius: .5rem;
+
+    border-top: 1px solid black;
+
     .item-card {
+      // width: 60%;
       border: 1px solid $color-blue;
       padding: 1rem;
+      margin: 0 auto;
+      text-align: left;
 
       &:first-child {
         border-bottom: none;

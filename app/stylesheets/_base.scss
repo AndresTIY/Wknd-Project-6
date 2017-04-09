@@ -6,19 +6,17 @@ body{
 
   font-family: Helvetica Neue, sans-serif;
 
-  header{
+  .feed-header{
       width: 100%;
       background: $color-card-bg;
-      position: fixed;
-      top: 0;
-      left: 0;
       text-align: center;
+      margin: 0 auto;
       * {
-        display: inline-block;
-        margin: .5rem 1rem;
+        display: block;
+        margin: .5rem auto;
       }
       button {
-        font-size: 2rem;
+        font-size: 1rem;
         background: white;
         padding: 0 1rem;
         border: 1px solid $color-blue;
@@ -30,7 +28,7 @@ body{
         color: white;
         border: 1px solid white;
       }
-      h2 {
+      h4 {
         font-weight: 300;
       }
 
