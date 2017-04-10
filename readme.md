@@ -1,16 +1,20 @@
 ### Requirement Summary
+
 [ ] full user authentication
   - [X] sign up
   - [X] log in
   - [ ] log out, not working correctly, guessing it has to do with the header settings?
+
 [X] CRUD for tweets
   - [X] create , need to log in all over again to create new. need to fix this but moving on
   - [X] read
   - [ ] update
   - [X] delete
+
 [x] Main Feed Page/Tweets by All
 [X] User Feed Page
   - [X] maybe add a 'go back' button
+
 [x] Responsive, ish
 
 
