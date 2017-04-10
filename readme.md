@@ -1,3 +1,19 @@
+### Requirement Summary
+[ ] full user authentication
+  - [X] sign up
+  - [X] log in
+  - [ ] log out, not working correctly, guessing it has to do with the header settings?
+[X] CRUD for tweets
+  - [X] create , need to log in all over again to create new. need to fix this but moving on
+  - [X] read
+  - [ ] update
+  - [X] delete
+[x] Main Feed Page/Tweets by All
+[X] User Feed Page
+  - [X] maybe add a 'go back' button
+[x] Responsive, ish
+
+
 ## Twitter Clone
 - Create a Twitter Clone!
 - Use full user authentication including:
@@ -8,6 +24,7 @@
 - A feed page that allows users to view all tweets posted by all users
 - Make site responsive
 - Include PROFILE pages that allow users to view only tweets made by the viewed user, as well as info about that user
+
 ### Notes
 - There should be two tables: [Tweet Table, User Table]
 - At least 4 pages, Login, Tweets, 2 more
@@ -88,25 +105,3 @@ Main Feed
 - Clicking Feed Item pops up box
 - User should be able to see a "DELETE" option
 - Possible Actions: Create, Delete, Log Out, User Feed
-
-### Reviewing Requirements
-[ ] full user authentication
-  - [x] sign up
-  - [x] log in
-  - [ ] log out, not working correctly, guessing it has to do with the header settings?
-[X] CRUD for tweets
-  - [x] create , need to log in all over again to create new. need to fix this but moving on
-  - [x] read
-  - [ ] update
-  - [x] delete, only user should see this button!
-[x] Main Feed Page/Tweets by All
-[X] User Feed Page// maybe add a 'go back' button
-[x] Responsive, ish
-
-###  What to work on next?
-
-- Log Out
-User Feed
-Responsive
-Use Friday's Notes and Organize
-Change Time Syntax?

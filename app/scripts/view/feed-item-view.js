@@ -31,11 +31,7 @@ export default function feedItemView(store, item) {
     $($htmlItem).find('.del').addClass('hidden');
   }
 
-  // if (state.currentUser !== item.username){
-  //   console.log(state.currentUser.username);
-  //   console.log(item.username);
-  //
-  // }
+
 
   $delBtn.on('click', (e)=>{
     store.dispatch({type:"DEL_TWEET", item: item});

@@ -105,8 +105,6 @@ export default function app() {
 
 
 
-
-      // case "LOG_OUT":
       case "LOAD_DATA":
       $.ajax({
         url: url + "/data/tw_clone",
